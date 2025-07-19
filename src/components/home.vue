@@ -20,10 +20,9 @@
 <style scoped>
 .subimg {
   width: 100%;
-  height: auto;
   max-width: 400px;
-  min-height: 600px;
-  aspect-ratio: 3/4;
+  height: auto;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   display: block;
   margin: 0 auto;
