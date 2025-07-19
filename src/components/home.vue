@@ -17,16 +17,40 @@
   
 </template>
 
-<style>
-.subimg{
-  height: 400px;
-  width: 400px;
+<style scoped>
+.subimg {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  min-height: 600px;
+  aspect-ratio: 3/4;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
+
 .wrapper_home {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 自動で均等3列 */
-  gap: 10px; /* カラム間のスペース（任意） */
-  justify-content: center; /* グリッド全体を中央寄せ（任意） */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
+
+/* タブレット以下で2列にする */
+@media (max-width: 1024px) {
+  .wrapper_home {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* スマホでは1列に */
+@media (max-width: 600px) {
+  .wrapper_home {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>

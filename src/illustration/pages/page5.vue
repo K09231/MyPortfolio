@@ -42,29 +42,57 @@
 </template>
 
 <style scoped>
-.Mainimg{
-    height: 800px;
-    object-fit: cover;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    transform: translateX(100px);
-}
-.subimg{
-  height: 600px;
-  width: 400px;
-  object-fit: cover;
-}
-.waku{
+.waku {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr; /* 左右2分割 */
+  gap: 20px;
+  align-items: start;
 }
+
 .setumei {
-  margin-left: -100px;
+  padding: 20px;
 }
+
 .wrapper {
   display: grid;
-  grid-template-columns: 60% 30%;
-  transform: translateX(-20px);
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* メイン画像 */
+.Mainimg {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 800px;
+  object-fit: cover;
+  display: block;
+
+}
+
+/* サブ画像 */
+.subimg {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+/* ======= レスポンシブ対応 ========== */
+@media (max-width: 768px) {
+  .waku {
+    grid-template-columns: 1fr;
+  }
+
+  .Mainimg {
+    order: 2;
+    max-width: 100%;
+    height: 500px;
+  }
+
+  .setumei {
+    order: 1;
+  }
 }
 </style>

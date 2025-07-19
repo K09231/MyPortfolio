@@ -30,8 +30,10 @@
 
 <style scoped>
 .subimg {
-  height: 400px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   display: block;
   margin: 0 auto;
@@ -39,21 +41,25 @@
 
 .wrapper_main {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);  /* デフォルト：3列 */
+  gap: 20px;
   justify-items: center;
-  margin: 2rem auto;
-  max-width: 1000px;
-  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.item {
-  width: 100%;
+/* タブレット画面：2列 */
+@media (max-width: 1024px) {
+  .wrapper_main {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.item p {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
+/* スマホ画面：1列 */
+@media (max-width: 600px) {
+  .wrapper_main {
+    grid-template-columns: 1fr;
+  }
 }
-
 </style>

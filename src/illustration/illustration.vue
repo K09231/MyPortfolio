@@ -25,16 +25,38 @@
   
 </template>
 
-<style>
-.subimg{
-  height: 600px;
-  width: 400px;
+<style scoped>
+.subimg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
+
 .wrapper_main {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 自動で均等3列 */
-  gap: 10px; /* カラム間のスペース（任意） */
-  justify-content: center; /* グリッド全体を中央寄せ（任意） */
+  grid-template-columns: repeat(3, 1fr);  /* デフォルト：3列 */
+  gap: 20px;
+  justify-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* タブレット画面：2列 */
+@media (max-width: 1024px) {
+  .wrapper_main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* スマホ画面：1列 */
+@media (max-width: 600px) {
+  .wrapper_main {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
